@@ -50,36 +50,6 @@ python -m src.run_experiment --config configs/seasonality_m4_monthly.json
 
 Для эксперимента используется фиксированная подвыборка из `120` monthly-рядов с `random_state = 17`.
 
-## Воспроизводимость
-
-Чтобы воспроизвести результаты, достаточно:
-
-1. клонировать репозиторий
-2. создать виртуальное окружение
-3. установить зависимости из `requirements.txt`
-4. запустить:
-
-```bash
-python -m src.run_experiment --config configs/seasonality_m4_monthly.json
-```
-
-В проекте зафиксированы:
-
-- конфиг эксперимента в `configs/seasonality_m4_monthly.json`
-- размер подвыборки: `120`
-- `random_state = 17`
-- `season_length = 12`
-- горизонт прогноза: `18`
-- число backtest-окон: `2`
-
-После запуска должны появиться:
-
-- `results/tables/summary_metrics.csv`
-- `results/tables/series_metrics.csv`
-- `results/tables/horizon_smape.csv`
-- `results/tables/seasonality_group_metrics.csv`
-- `results/figures/smape_by_horizon.png`
-
 ## Что делает код
 
 1. скачивает `M4 Monthly` в `data/raw`, если файлов еще нет
